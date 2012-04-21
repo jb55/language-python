@@ -1,4 +1,4 @@
-{-# LANGUAGE TypeSynonymInstances #-}
+{-# LANGUAGE TypeSynonymInstances, FlexibleInstances #-}
 -----------------------------------------------------------------------------
 -- |
 -- Module      : Language.Python.Common.Pretty
@@ -34,7 +34,7 @@ prettyPrefix maxLen x
    fullText = prettyText x 
 
 instance Pretty String where
-   pretty s = text s
+  pretty = text
 
 -- | Conditionally wrap parentheses around an item.
 parensIf :: Pretty a => (a -> Bool) -> a -> Doc
